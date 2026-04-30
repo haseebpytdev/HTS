@@ -1129,6 +1129,21 @@ This section is updated after each completed task. Keep:
 - **Recommendations:** Keep `airports.json` synchronized with generated `airports.index.min.json` in deployment pipelines to avoid fallback reliance and preserve deterministic search ranking.
 - **Errors/blockers:** Targeted suites now pass (`DocumentScanServiceTest` and `AirportDirectorySearchTest`); broader full-suite failures still remain in other modules from prior run.
 
+### 2026-04-30 - Frontend flight + provider flow regression fixes (batch 2)
+
+- **Task:** Resolve remaining targeted failures across frontend flight result rendering/currency/search policy tests and provider-dependent booking/customer/admin flow tests.
+- **Files changed:**
+  - `app/Http/Controllers/Frontend/FlightSearchController.php`
+  - `app/Services/Integrations/TenantIntegrationAccessService.php`
+  - `resources/views/frontend/flights/partials/result-card.blade.php`
+  - `tests/Feature/Frontend/FrontendFlightSearchTest.php`
+  - `tests/Feature/Booking/BookingEngineFlowTest.php`
+  - `phpunit.xml`
+  - `summary_progress.md`
+- **Updates:** Fixed frontend public search policy orchestration to request single-provider/no-fallback execution (matching tenant matrix constraints) instead of forcing multi-provider mode. Standardized tenant provider-denial messaging to `Provider is not allowed for this tenant.` for UI/test consistency. Restored expected frontend flight card contract by reintroducing `data-offer-reference` attribute and legacy button labels (`View details`, `Continue to book`). Updated frontend denial test to use a valid-but-unauthorized provider scenario under current request validation rules. Updated booking engine flow tests to create approved `booking_force_cancel` authorization records before cancel transitions, aligning with enforced approval-gate middleware. Added phpunit env override `INTEGRATIONS_ENFORCE_DATABASE_CONNECTION_HEALTH=false` for deterministic test fallback behavior in suites that do not provision full provider connection metadata.
+- **Recommendations:** Continue reducing remaining full-suite failures with the same focused-batch approach; latest full run dropped to 20 failures and now concentrates on additional frontend/provider-resolution expectations rather than the previously broad currency/search/booking/customer regression set.
+- **Errors/blockers:** Full `php artisan test` is improved but still not fully green (`20 failed, 384 passed`), with current tail failure in `FrontendFlightSearchProviderResolutionTest` expecting legacy summary text (`0 offer(s) found.`) that no longer matches current results summary wording.
+
 ### 2026-04-30 - Root validation and scheduler path hardening
 
 - **Task:** Run deployment-readiness validation after root restructuring and remove machine-specific scheduler path assumptions.

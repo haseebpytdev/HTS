@@ -32,7 +32,7 @@ final class TenantIntegrationAccessService
 
         $allowedProviders = $policy['allowed_providers'];
         if ($allowedProviders === []) {
-            throw $this->denied('provider_not_allowed', 'No providers are enabled for this tenant.');
+            throw $this->denied('provider_not_allowed', 'Provider is not allowed for this tenant.');
         }
 
         $orderedAllowed = $this->orderedAllowedProviders($allowedProviders, $policy['provider_priority']);
@@ -45,7 +45,7 @@ final class TenantIntegrationAccessService
             ));
             $filteredRequested = array_values(array_intersect($normalizedRequested, $orderedAllowed));
             if ($filteredRequested === []) {
-                throw $this->denied('provider_not_allowed', 'Requested providers are not enabled for this tenant.');
+                throw $this->denied('provider_not_allowed', 'Provider is not allowed for this tenant.');
             }
         }
 
@@ -53,7 +53,7 @@ final class TenantIntegrationAccessService
             ? AmadeusSelfServiceProvider::normalize($providerOverride)
             : null;
         if ($providerOverride !== null && ! in_array($providerOverride, $orderedAllowed, true)) {
-            throw $this->denied('provider_not_allowed', 'Requested provider is not enabled for this tenant.');
+            throw $this->denied('provider_not_allowed', 'Provider is not allowed for this tenant.');
         }
         $effectiveOverride = ($providerOverride !== null && $providerOverride !== '') ? $providerOverride : ($orderedAllowed[0] ?? null);
 
@@ -89,7 +89,7 @@ final class TenantIntegrationAccessService
         }
 
         if ($provider !== null && $provider !== '' && ! in_array($provider, $policy['allowed_providers'], true)) {
-            throw $this->denied('provider_not_allowed', 'Requested provider is not enabled for this tenant.');
+            throw $this->denied('provider_not_allowed', 'Provider is not allowed for this tenant.');
         }
     }
 
@@ -108,7 +108,7 @@ final class TenantIntegrationAccessService
         $ordered = $this->orderedAllowedProviders($policy['allowed_providers'], $policy['provider_priority']);
 
         if ($ordered === []) {
-            throw $this->denied('provider_not_allowed', 'No providers are enabled for this tenant.');
+            throw $this->denied('provider_not_allowed', 'Provider is not allowed for this tenant.');
         }
 
         return $ordered[0];
@@ -141,7 +141,7 @@ final class TenantIntegrationAccessService
             ? AmadeusSelfServiceProvider::normalize($providerOverride)
             : null;
         if ($providerOverride !== null && ! in_array($providerOverride, $orderedAllowed, true)) {
-            throw $this->denied('provider_not_allowed', 'Requested provider is not enabled for this tenant.');
+            throw $this->denied('provider_not_allowed', 'Provider is not allowed for this tenant.');
         }
         $effectiveOverride = ($providerOverride !== null && $providerOverride !== '') ? $providerOverride : ($orderedAllowed[0] ?? null);
 
@@ -152,7 +152,7 @@ final class TenantIntegrationAccessService
             ), $orderedAllowed))
             : null;
         if ($providers !== null && $filteredRequested === []) {
-            throw $this->denied('provider_not_allowed', 'Requested providers are not enabled for this tenant.');
+            throw $this->denied('provider_not_allowed', 'Provider is not allowed for this tenant.');
         }
 
         if ($allowFallback && ! $policy['allow_fallback']) {

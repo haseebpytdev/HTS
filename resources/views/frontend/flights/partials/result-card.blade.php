@@ -15,7 +15,7 @@
     $showStop = ! empty($summary['stop_label']);
 @endphp
 
-<x-ui.flight-result-card class="flight-result-card-mobile">
+<x-ui.flight-result-card class="flight-result-card-mobile" data-offer-reference="{{ $offer['provider_offer_reference'] ?? $offer['id'] ?? '' }}">
     <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
         <div class="d-flex align-items-center gap-2">
             @if(! empty($summary['carrier_logo_url']))
@@ -53,7 +53,7 @@
                 aria-expanded="false"
                 aria-controls="{{ $detailsId }}"
             >
-                View Details
+                View details
             </button>
         </div>
     </div>
@@ -151,7 +151,7 @@
                         <input type="hidden" name="correlation_id" value="{{ $correlationId }}">
                         <input type="hidden" name="offer_reference" value="{{ $offer['provider_offer_reference'] ?? $offer['id'] ?? '' }}">
                         <input type="hidden" name="provider" value="{{ $driver }}">
-                        <button class="btn btn-brand-green w-100 rounded-3" type="submit">Continue</button>
+                        <button class="btn btn-brand-green w-100 rounded-3" type="submit">Continue to book</button>
                     </form>
                     <p class="as-helper-text mb-0">
                         We will confirm the latest price and availability with the airline before you enter traveler details.

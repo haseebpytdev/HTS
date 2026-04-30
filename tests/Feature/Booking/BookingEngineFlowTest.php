@@ -4,6 +4,7 @@ namespace Tests\Feature\Booking;
 
 use App\Enums\BookingStatus;
 use App\Enums\UserRole;
+use App\Models\ApprovalRequest;
 use App\Models\Booking;
 use App\Models\BookingStatusHistory;
 use App\Models\Quotation;
@@ -118,6 +119,18 @@ class BookingEngineFlowTest extends TestCase
         $this->assertSame('queued', $booking->supplier_flight_hook_status);
         $this->assertSame('queued', $booking->supplier_hotel_hook_status);
 
+        ApprovalRequest::query()->create([
+            'request_type' => 'booking_force_cancel',
+            'status' => 'approved',
+            'requested_by_user_id' => $admin->id,
+            'reviewed_by_user_id' => $admin->id,
+            'reference_type' => Booking::class,
+            'reference_id' => $booking->id,
+            'review_note' => 'Approved for test cancellation flow',
+            'submitted_at' => now(),
+            'reviewed_at' => now(),
+        ]);
+
         $this->actingAs($admin)->post(route('admin.bookings.cancel', $booking), [
             'reason' => 'Customer requested',
         ])->assertRedirect();
@@ -179,6 +192,18 @@ class BookingEngineFlowTest extends TestCase
                 ],
             ],
         ])->assertRedirect();
+
+        ApprovalRequest::query()->create([
+            'request_type' => 'booking_force_cancel',
+            'status' => 'approved',
+            'requested_by_user_id' => $admin->id,
+            'reviewed_by_user_id' => $admin->id,
+            'reference_type' => Booking::class,
+            'reference_id' => $booking->id,
+            'review_note' => 'Approved for amendment flow cancellation',
+            'submitted_at' => now(),
+            'reviewed_at' => now(),
+        ]);
 
         $this->actingAs($admin)->post(route('admin.bookings.cancel', $booking), [
             'reason' => 'Customer withdrew',

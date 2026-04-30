@@ -76,8 +76,8 @@ class FlightSearchController extends Controller
                 agencyId: null,
                 providerOverride: $provider,
                 providers: null,
-                allowFallback: true,
-                allowMultiProvider: true,
+                allowFallback: false,
+                allowMultiProvider: false,
             );
             $authorizedProviders = $this->integrationOrchestration->resolveAuthorizedProviderOrder(
                 tenantId: $policy['tenant_id'],

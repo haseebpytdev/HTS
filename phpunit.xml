@@ -31,5 +31,6 @@
         <env name="TELESCOPE_ENABLED" value="false"/>
         <env name="DISPLAY_FX_HTTP_PROVIDERS_ENABLED" value="false"/>
         <env name="AIRPORT_REMOTE_SEARCH_ENABLED" value="false"/>
+        <env name="INTEGRATIONS_ENFORCE_DATABASE_CONNECTION_HEALTH" value="false"/>
     </php>
 </phpunit>

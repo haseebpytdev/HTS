@@ -60,13 +60,14 @@ class FrontendFlightSearchTest extends TestCase
     public function test_public_flight_results_page_shows_matrix_denial_when_provider_is_not_runtime_allowed(): void
     {
         config()->set('integrations.driver', 'stub');
-        config()->set('integrations.supported_drivers', ['stub']);
+        config()->set('integrations.supported_drivers', ['stub', 'duffel']);
         config()->set('integrations.stub_scenario', 'flight_search_success');
 
         $response = $this->get(route('frontend.flights.results', [
             'trip_type' => 'one_way',
             'from' => 'LHE',
             'to' => 'DXB',
+            'provider' => 'duffel',
             'departure_date' => now()->addDays(10)->toDateString(),
             'passengers' => '2',
             'cabin_class' => 'economy',
