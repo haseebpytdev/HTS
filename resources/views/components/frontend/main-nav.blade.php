@@ -86,3 +86,25 @@
         </div>
     </div>
 </nav>
+
+@once
+    @push('scripts')
+        <script>
+            (function () {
+                const nav = document.getElementById('mainSiteNav');
+                if (!nav) {
+                    return;
+                }
+
+                const SCROLL_THRESHOLD = 12;
+                const applyNavScrollState = function () {
+                    nav.classList.toggle('frontend-nav--scrolled', window.scrollY > SCROLL_THRESHOLD);
+                };
+
+                applyNavScrollState();
+                window.addEventListener('scroll', applyNavScrollState, { passive: true });
+                window.addEventListener('resize', applyNavScrollState);
+            })();
+        </script>
+    @endpush
+@endonce

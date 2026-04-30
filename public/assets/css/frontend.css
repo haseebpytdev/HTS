@@ -177,6 +177,22 @@ body {
     padding-bottom: 0.25rem;
 }
 
+.frontend-nav .navbar-brand .brand-wordmark__h {
+    width: 50px;
+    height: 50px;
+    transition: width 0.2s ease, height 0.2s ease;
+}
+
+.frontend-nav .navbar-brand .brand-wordmark__line1 {
+    font-size: 1.4rem;
+    transition: font-size 0.2s ease;
+}
+
+.frontend-nav .navbar-brand .brand-wordmark__line2 {
+    font-size: 0.8rem;
+    transition: font-size 0.2s ease;
+}
+
 @media (min-width: 992px) {
     .frontend-nav .navbar-nav .nav-link {
         padding-top: 0.65rem;
@@ -190,6 +206,39 @@ body {
     right: 0;
     top: 0;
     background: linear-gradient(180deg, rgba(11, 31, 51, 0.75) 0%, rgba(11, 31, 51, 0) 100%);
+}
+
+.frontend-nav--transparent.frontend-nav--scrolled {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+}
+
+.frontend-nav--transparent.frontend-nav--scrolled .nav-link {
+    color: var(--as-navy) !important;
+}
+
+.frontend-nav--transparent.frontend-nav--scrolled .nav-link.active,
+.frontend-nav--transparent.frontend-nav--scrolled .nav-link:hover {
+    color: var(--as-green) !important;
+}
+
+.frontend-nav--transparent.frontend-nav--scrolled .brand-wordmark__line2 {
+    color: #0b1f33;
+}
+
+.frontend-nav.frontend-nav--scrolled .navbar-brand .brand-wordmark__h {
+    width: 40px;
+    height: 40px;
+}
+
+.frontend-nav.frontend-nav--scrolled .navbar-brand .brand-wordmark__line1 {
+    font-size: 1.12rem;
+}
+
+.frontend-nav.frontend-nav--scrolled .navbar-brand .brand-wordmark__line2 {
+    font-size: 0.7rem;
 }
 
 /* Hero overlay nav: default to light-on-dark until JS may switch to on-light */
@@ -1268,10 +1317,18 @@ body {
     }
 
     .frontend-nav .navbar-brand .brand-wordmark__line1 {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .frontend-nav .navbar-brand .brand-wordmark__line2 {
+        font-size: 0.72rem;
+    }
+
+    .frontend-nav.frontend-nav--scrolled .navbar-brand .brand-wordmark__line1 {
+        font-size: 1rem;
+    }
+
+    .frontend-nav.frontend-nav--scrolled .navbar-brand .brand-wordmark__line2 {
         font-size: 0.65rem;
     }
 

@@ -1127,6 +1127,22 @@ This section is updated after each completed task. Keep:
 - **Recommendations:** In production, run `php artisan migrate --force` against the expected schema before full suite execution; current failing tests indicate schema mismatch around `application_settings.scope` and related integration fixtures/environment assumptions.
 - **Errors/blockers:** Full `php artisan test` run reports broad failures (385 failed, 19 passed), with recurring blocker `SQLSTATE[42S22] Unknown column 'scope'` on `application_settings` and additional environment-dependent integration/feature failures.
 
+### 2026-04-30 - Header logo normalization and test harness schema hardening
+
+- **Task:** Increase frontend header logo size by 10px with scroll-state shrink behavior, then validate test DB/migrations and stabilize integration/provider test fixtures after root migration changes.
+- **Files changed:**
+  - `resources/views/components/frontend/main-nav.blade.php`
+  - `public/assets/css/frontend.css`
+  - `app/Services/System/SystemSettingsService.php`
+  - `tests/TestCase.php`
+  - `tests/Unit/Integrations/ProviderResolverTest.php`
+  - `database/migrations/_extensions_operational/2026_04_30_085836_ensure_application_settings_scope_columns.php`
+  - `database/migrations/_extensions_operational/2026_04_30_090058_ensure_approval_request_control_columns.php`
+  - `summary_progress.md`
+- **Updates:** Added shared nav scroll listener to toggle `frontend-nav--scrolled`, enlarged default header wordmark/icon sizing (+10px visual scale), and restored original compact size after scroll while keeping sticky/fixed behavior for transparent hero nav. Added forward-safe migrations to backfill missing enterprise `application_settings` and `approval_requests` control columns caused by historical migration order mismatch. Removed stale static schema readiness caching in `SystemSettingsService` to avoid incorrect table/column assumptions across in-memory test runs. Updated fallback test schema for `integration_connections` to include soft deletes, tenancy/defaulting, status, ownership, and health timestamp fields so provider resolution tests run against realistic structure. Verified tenancy isolation suite passes and integration-focused unit subset now passes (`19 passed`).
+- **Recommendations:** Continue triaging remaining full-suite failures (`php artisan test`) in focused batches (document scanner mode expectations, airport index fixtures, frontend currency/results rendering, and provider availability assertions) to avoid cross-module regressions.
+- **Errors/blockers:** Full suite still reports unrelated failures (latest run still failing in frontend/customer/admin booking flows despite integration fixture fixes); long-running suite output indicates at least airport directory and flight results currency assertions remain unresolved.
+
 ### 2026-04-30 - Promoted app folder to workspace root
 
 - **Task:** Flatten workspace structure so project contents move from `apnasafar-portal/` into root `Apnasafar_new/`.

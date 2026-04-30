@@ -593,10 +593,17 @@ abstract class TestCase extends BaseTestCase
                 $table->string('name')->nullable();
                 $table->string('provider', 64);
                 $table->string('environment', 32)->default('testing');
+                $table->unsignedBigInteger('tenant_id')->nullable();
                 $table->string('account_key')->nullable();
                 $table->text('base_url')->nullable();
                 $table->json('config')->nullable();
                 $table->boolean('is_active')->default(true);
+                $table->boolean('is_default')->default(false);
+                $table->string('status', 32)->default('healthy');
+                $table->string('ownership_type', 32)->default('tenant_owned');
+                $table->timestamp('last_success_at')->nullable();
+                $table->timestamp('last_tested_at')->nullable();
+                $table->softDeletes();
                 $table->timestamps();
             });
         }

@@ -7,9 +7,6 @@ use Illuminate\Support\Facades\Schema;
 
 class SystemSettingsService
 {
-    /** @var bool|null Null = not yet resolved; avoids repeated Schema::hasTable/hasColumns on every read. */
-    private static ?bool $settingsTableReady = null;
-
     /**
      * @param  array{
      *   scope?: string,
@@ -186,16 +183,12 @@ class SystemSettingsService
 
     private function hasSettingsTable(): bool
     {
-        if (self::$settingsTableReady !== null) {
-            return self::$settingsTableReady;
-        }
-
         if (! Schema::hasTable('application_settings')) {
-            return self::$settingsTableReady = false;
+            return false;
         }
 
         // Enterprise settings reads require scoped columns from EA-2 migration.
-        return self::$settingsTableReady = Schema::hasColumns('application_settings', [
+        return Schema::hasColumns('application_settings', [
             'scope',
             'scope_id',
             'provider',

@@ -12,6 +12,7 @@ class ProviderResolverTest extends TestCase
         config([
             'integrations.driver' => 'sabre',
             'integrations.supported_drivers' => ['travelport', 'sabre', 'amadeus'],
+            'integrations.enforce_database_connection_health' => false,
         ]);
 
         $resolver = app(ProviderResolver::class);
