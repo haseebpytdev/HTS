@@ -336,16 +336,48 @@ class AirportDirectoryService
     private function localAirports(): array
     {
         $path = $this->datasetPath();
-        if (! is_file($path)) {
-            return [];
+        $rows = [];
+        if (is_file($path)) {
+            $decoded = json_decode((string) file_get_contents($path), true);
+            if (is_array($decoded)) {
+                $rows = $this->normalizeRows($decoded);
+            }
         }
 
-        $decoded = json_decode((string) file_get_contents($path), true);
-        if (! is_array($decoded)) {
-            return [];
+        // Fallback to prebuilt compact index when local dataset is missing/sparse.
+        if (count($rows) >= 10) {
+            return $rows;
         }
 
-        return $this->normalizeRows($decoded);
+        $indexPath = public_path('data/airports.index.min.json');
+        if (! is_file($indexPath)) {
+            return $rows;
+        }
+
+        $indexDecoded = json_decode((string) file_get_contents($indexPath), true);
+        if (! is_array($indexDecoded) || ! is_array($indexDecoded['r'] ?? null)) {
+            return $rows;
+        }
+
+        $expanded = [];
+        foreach ($indexDecoded['r'] as $entry) {
+            if (! is_array($entry) || count($entry) < 4) {
+                continue;
+            }
+
+            $expanded[] = [
+                'iata' => (string) $entry[0],
+                'city' => (string) $entry[1],
+                'country' => (string) $entry[2],
+                'airport' => (string) $entry[3],
+            ];
+        }
+
+        if ($expanded === []) {
+            return $rows;
+        }
+
+        return $this->normalizeRows($expanded);
     }
 
     /**

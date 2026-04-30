@@ -1117,6 +1117,18 @@ This section is updated after each completed task. Keep:
 - **Recommendations:** Add a dedicated frontend integration availability banner that explicitly shows the currently authorized provider (or disabled reason) based on tenant runtime policy to reduce operator ambiguity during go-live checks.
 - **Errors/blockers:** None.
 
+### 2026-04-30 - Header readability refinement and first test-fix batch
+
+- **Task:** Ensure scrolled header readability with smoother transition, then fix highest-signal failing tests (`DocumentScanServiceTest`, `AirportDirectorySearchTest`).
+- **Files changed:**
+  - `public/assets/css/frontend.css`
+  - `app/Services/Documents/DocumentScanService.php`
+  - `app/Services/Travel/AirportDirectoryService.php`
+  - `summary_progress.md`
+- **Updates:** Updated scrolled transparent nav styling to force dark/readable text (including dropdown/CTA states), added smoother background/box-shadow/border transitions, and switched scrolled header surface to a subtle light gradient for better contrast continuity. Made `DocumentScanService` settings dependency backward-compatible for direct unit construction by allowing nullable settings and safe config fallback policy resolution. Added airport directory fallback logic to consume `public/data/airports.index.min.json` when `airports.json` is missing/sparse, restoring expected autocomplete/search fixture coverage (`LHE`, `KHI`, `DXB`, etc.) without remote dependency.
+- **Recommendations:** Keep `airports.json` synchronized with generated `airports.index.min.json` in deployment pipelines to avoid fallback reliance and preserve deterministic search ranking.
+- **Errors/blockers:** Targeted suites now pass (`DocumentScanServiceTest` and `AirportDirectorySearchTest`); broader full-suite failures still remain in other modules from prior run.
+
 ### 2026-04-30 - Root validation and scheduler path hardening
 
 - **Task:** Run deployment-readiness validation after root restructuring and remove machine-specific scheduler path assumptions.

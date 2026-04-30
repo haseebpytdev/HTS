@@ -11,7 +11,7 @@ final class DocumentScanService
 {
     public function __construct(
         private readonly DocumentScannerInterface $scanner,
-        private readonly DocumentSecuritySettingsService $settings,
+        private readonly ?DocumentSecuritySettingsService $settings = null,
     ) {
     }
 
@@ -20,7 +20,7 @@ final class DocumentScanService
      */
     public function scanFile(string $absolutePath, array $context = []): DocumentScanResultData
     {
-        $policy = $this->settings->policy();
+        $policy = $this->settings?->policy() ?? [];
         $mode = (string) ($policy['scan_mode'] ?? config('documents.scanning.mode', 'disabled'));
         $provider = (string) ($policy['scan_provider'] ?? config('documents.scanning.provider', 'stub'));
         $maxScanSizeBytes = (int) ($policy['max_scan_file_size_bytes'] ?? config('documents.scanning.max_file_size_bytes', 20 * 1024 * 1024));
