@@ -1117,6 +1117,35 @@ This section is updated after each completed task. Keep:
 - **Recommendations:** Add a dedicated frontend integration availability banner that explicitly shows the currently authorized provider (or disabled reason) based on tenant runtime policy to reduce operator ambiguity during go-live checks.
 - **Errors/blockers:** None.
 
+### 2026-04-30 - Root validation and scheduler path hardening
+
+- **Task:** Run deployment-readiness validation after root restructuring and remove machine-specific scheduler path assumptions.
+- **Files changed:**
+  - `storage/framework/scheduler-runner.bat`
+  - `summary_progress.md`
+- **Updates:** Executed Composer/Laravel/build/test validation checks from new root and identified a hardcoded old workspace path in scheduler runner script. Updated scheduler batch script to resolve project root dynamically from script location and invoke `php artisan schedule:run` via PATH, with log output written using normalized project-relative paths.
+- **Recommendations:** In production, run `php artisan migrate --force` against the expected schema before full suite execution; current failing tests indicate schema mismatch around `application_settings.scope` and related integration fixtures/environment assumptions.
+- **Errors/blockers:** Full `php artisan test` run reports broad failures (385 failed, 19 passed), with recurring blocker `SQLSTATE[42S22] Unknown column 'scope'` on `application_settings` and additional environment-dependent integration/feature failures.
+
+### 2026-04-30 - Promoted app folder to workspace root
+
+- **Task:** Flatten workspace structure so project contents move from `apnasafar-portal/` into root `Apnasafar_new/`.
+- **Files changed:**
+  - `.gitignore`
+  - `summary_progress.md`
+- **Updates:** Moved all tracked project files (including `.git`) to workspace root and removed now-empty `apnasafar-portal/` container folder, making `Apnasafar_new/` the direct project root. Added `/.cursor` to `.gitignore` so local Cursor settings remain untracked after root promotion.
+- **Recommendations:** Reopen the folder in Cursor at `Apnasafar_new` (or restart workspace indexing) so IDE paths and run configurations refresh against the new root layout.
+- **Errors/blockers:** None.
+
+### 2026-04-30 - Root workspace cleanup after GitHub publish
+
+- **Task:** Remove non-project root folders/files outside `apnasafar-portal` and eliminate accidental outer git repository metadata.
+- **Files changed:**
+  - `summary_progress.md`
+- **Updates:** Deleted duplicate scaffold folder `apnasafar_new/`, temporary planning/export folders (`_checkpoints`, `_prompts`, `_workspace`), local export files (`Urdu_Exp.html`, `Urdu_Exp.pdf`), and accidental outer-root git metadata (`.git`, outer `.gitignore`) so `apnasafar-portal` remains the single source project repository under the workspace root.
+- **Recommendations:** Keep future source control operations scoped to `apnasafar-portal` only, and retain/remove root `.cursor` based on whether Cursor rule guidance is still desired for this workspace.
+- **Errors/blockers:** None.
+
 ### 2026-04-30 - Initial safe GitHub publishing setup
 
 - **Task:** Prepare the workspace for first-time GitHub publishing by adding top-level ignore protection and committing project files safely for remote push.
