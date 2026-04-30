@@ -64,3 +64,14 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Local startup and smoke check
+
+For reliable local testing on Windows, use the included helper scripts from project root:
+
+- `powershell -ExecutionPolicy Bypass -File scripts/local-start.ps1`
+  - verifies Laravel can boot (`php artisan about`)
+  - starts `php artisan serve` automatically if not already running
+  - runs route smoke checks against key public/auth/admin/agency/customer/api URLs
+- `php scripts/local-smoke.php`
+  - runs smoke checks only (expects server already running)

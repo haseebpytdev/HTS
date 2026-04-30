@@ -1,0 +1,18 @@
+{
+  "BookingResponse": {
+    "id": "TP-BKG-001",
+    "pnr": "TP9K2L",
+    "status": "confirmed",
+    "createdAt": "2026-06-01T10:12:00Z",
+    "passengers": [
+      { "traveler_type": "adult", "firstName": "Ali", "lastName": "Khan", "nationality": "PK" }
+    ],
+    "price": {
+      "currencyCode": "USD",
+      "base": 420.0,
+      "taxes": 90.0,
+      "fees": 15.0,
+      "grandTotal": 525.0
+    }
+  }
+}

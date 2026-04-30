@@ -1,0 +1,31 @@
+{
+  "OTA_AirPriceRS": {
+    "PricedItineraries": {
+      "PricedItinerary": {
+        "AirItineraryPricingInfo": {
+          "ItinTotalFare": {
+            "BaseFare": {
+              "@attributes": {
+                "Amount": "220.00",
+                "CurrencyCode": "USD"
+              }
+            },
+            "Taxes": {
+              "@attributes": {
+                "Amount": "44.00"
+              }
+            },
+            "TotalFare": {
+              "@attributes": {
+                "Amount": "264.00",
+                "CurrencyCode": "USD"
+              }
+            }
+          }
+        }
+      }
+    },
+    "PricingToken": "SOAP-PRICE-TOKEN-1"
+  }
+}
+

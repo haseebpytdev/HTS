@@ -1,0 +1,100 @@
+/* Geometric "H" wordmark — shared: public (Bootstrap) + app shell (imported from app.css) */
+.brand-wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    line-height: 1.1;
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand-wordmark__icon {
+    color: #d35400;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-wordmark__h {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.brand-wordmark--footer .brand-wordmark__h {
+    width: 34px;
+    height: 34px;
+}
+
+.brand-wordmark--admin .brand-wordmark__h {
+    width: 30px;
+    height: 30px;
+}
+
+.brand-wordmark__text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.brand-wordmark__line1 {
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    font-size: 1.12rem;
+    color: #d35400;
+    letter-spacing: 0.01em;
+    line-height: 1.15;
+}
+
+.brand-wordmark__line2 {
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    font-weight: 500;
+    font-size: 0.7rem;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #0b1f33;
+}
+
+/* Public nav: line 2 follows light-on-dark / light bar */
+.frontend-nav--transparent.frontend-nav--on-dark .brand-wordmark__line2 {
+    color: #f1f5f9;
+}
+
+.frontend-nav--transparent.frontend-nav--on-light .brand-wordmark__line1 {
+    color: #d35400;
+}
+
+.frontend-nav--transparent.frontend-nav--on-light .brand-wordmark__line2 {
+    color: #0f172a;
+}
+
+.frontend-nav--solid .brand-wordmark__line1 {
+    color: #d35400;
+}
+
+.frontend-nav--solid .brand-wordmark__line2 {
+    color: #0b1f33;
+}
+
+/* Footer: muted subline */
+.brand-wordmark--footer .brand-wordmark__line2 {
+    color: #64748b;
+    font-size: 0.72rem;
+}
+
+.brand-wordmark--footer .brand-wordmark__line1 {
+    color: #d35400;
+    font-size: 1.05rem;
+}
+
+/* Admin sidebar: compact, both lines on light gray */
+.brand-wordmark--admin .brand-wordmark__line1 {
+    font-size: 0.95rem;
+}
+
+.brand-wordmark--admin .brand-wordmark__line2 {
+    font-size: 0.62rem;
+    color: #64748b;
+    margin-top: 0.05rem;
+}

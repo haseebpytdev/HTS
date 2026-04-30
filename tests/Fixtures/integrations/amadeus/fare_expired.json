@@ -1,0 +1,10 @@
+{
+  "scenario": "fare_expired",
+  "error": {
+    "normalized_code": "fare_no_longer_available",
+    "supplier_code": "AMA_FARE_EXPIRED",
+    "message": "Amadeus fare is no longer available.",
+    "http_status": 409,
+    "correlation_id": "amadeus-fare-expired"
+  }
+}

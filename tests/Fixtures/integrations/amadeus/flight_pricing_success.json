@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "id": "amadeus-offer-1",
+      "price": {
+        "currency": "USD",
+        "base": 410.0,
+        "taxes": 88.0,
+        "fees": 12.0,
+        "grandTotal": 510.0,
+        "status": "available",
+        "lines": [
+          { "label": "Base Fare", "amount": 410.0 },
+          { "label": "Taxes", "amount": 88.0 },
+          { "label": "Fees", "amount": 12.0 }
+        ]
+      }
+    }
+  ]
+}

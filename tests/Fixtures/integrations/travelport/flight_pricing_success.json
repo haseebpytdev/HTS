@@ -1,0 +1,17 @@
+{
+  "CatalogProductOfferingsResponse": {
+    "Price": {
+      "currencyCode": "USD",
+      "base": 420.0,
+      "taxes": 90.0,
+      "fees": 15.0,
+      "grandTotal": 525.0,
+      "status": "available",
+      "lines": [
+        { "label": "Base Fare", "amount": 420.0 },
+        { "label": "Taxes", "amount": 90.0 },
+        { "label": "Fees", "amount": 15.0 }
+      ]
+    }
+  }
+}

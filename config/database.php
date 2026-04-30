@@ -122,6 +122,19 @@ return [
     |
     */
 
+    /*
+    |--------------------------------------------------------------------------
+    | Schema dump (baseline)
+    |--------------------------------------------------------------------------
+    |
+    | After a full migrate on MySQL, run: php artisan schema:dump --database=mysql
+    | This writes database/schema/mysql-schema.sql. On migrate against an empty
+    | database, Laravel loads that file first (see MigrateCommand) so new environments
+    | can apply the baseline quickly; incremental migrations still run after.
+    | Do not use --prune unless you intend to delete migration PHP files.
+    |
+    */
+
     'migrations' => [
         'table' => 'migrations',
         'update_date_on_publish' => true,

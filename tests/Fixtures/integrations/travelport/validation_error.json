@@ -1,0 +1,10 @@
+{
+  "scenario": "validation_error",
+  "error": {
+    "normalized_code": "supplier_request_invalid",
+    "supplier_code": "TP_VALIDATION_400",
+    "message": "Travelport request failed validation.",
+    "http_status": 422,
+    "correlation_id": "tp-validation-correlation"
+  }
+}

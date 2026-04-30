@@ -1,0 +1,11 @@
+{
+  "pricing": {
+    "currency": "USD",
+    "base_amount": 0,
+    "tax_amount": 0,
+    "fee_amount": 0,
+    "total_amount": 0,
+    "status": "unavailable",
+    "lines": []
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "scenario": "rate_limit",
+  "error": {
+    "normalized_code": "supplier_rate_limited",
+    "supplier_code": "AMA_RATE_LIMIT_429",
+    "message": "Amadeus throttle limit exceeded.",
+    "http_status": 429,
+    "correlation_id": "amadeus-rate-limit"
+  }
+}

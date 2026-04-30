@@ -6,11 +6,13 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "barryvdh/laravel-dompdf": "^3.1",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
+        "laravel/breeze": "^2.4",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
         "mockery/mockery": "^1.6",
@@ -45,6 +47,15 @@
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --ansi"
+        ],
+        "test:smoke": [
+            "@php vendor/bin/phpunit tests/Feature/Auth/AuthenticationTest.php tests/Feature/Auth/RoleAccessTest.php tests/Feature/Admin/AdminQuotationFlowTest.php tests/Feature/Booking/BookingEngineFlowTest.php tests/Feature/Admin/AdminBookingPaymentHttpTest.php tests/Feature/Frontend/PackageAndGroupFilterTest.php tests/Feature/Api/IntegrationsEndpointsTest.php --stop-on-failure"
+        ],
+        "test:regression-critical": [
+            "@php vendor/bin/phpunit tests/Feature/Auth tests/Feature/Agency/AgencyPortalAccessTest.php tests/Feature/Customer tests/Feature/Tenancy tests/Feature/Booking/BookingEngineFlowTest.php tests/Feature/Admin/AdminQuotationFlowTest.php tests/Unit/Calculator/UmrahQuotationCalculatorTest.php tests/Unit/Payment/PaymentServiceTest.php tests/Feature/Admin/AdminBookingPaymentHttpTest.php tests/Feature/Admin/AdminBookingSupplierCostAndMarginTest.php tests/Feature/Admin/InquiryCrmTest.php tests/Feature/Admin/InquiryOperationsTest.php tests/Feature/Admin/AdminBookingDocumentValidationTest.php tests/Feature/Admin/AdminBookingDocumentUploadTest.php tests/Feature/Admin/AdminBookingDocumentDownloadTest.php tests/Feature/Admin/AdminBookingDocumentLifecycleHardeningTest.php tests/Feature/Documents/DocumentLifecycleWorkflowTest.php tests/Feature/Support/SupportTicketWorkflowTest.php tests/Feature/Api/IntegrationsEndpointsTest.php tests/Feature/Api/IntegrationSearchSnapshotTest.php tests/Feature/Api/BookingRevalidationGuardTest.php tests/Feature/Integration tests/Feature/Admin/SettingsModuleTest.php --stop-on-failure"
+        ],
+        "test:full": [
+            "@php artisan test"
         ]
     },
     "extra": {

@@ -1,0 +1,57 @@
+{
+  "OTA_AirLowFareSearchRQ": {
+    "Version": "5",
+    "POS": {
+      "Source": [
+        {
+          "PseudoCityCode": "DEVCENTER",
+          "RequestorID": {
+            "Type": "1",
+            "ID": "DEVCENTER",
+            "CompanyName": {
+              "Code": "TN"
+            }
+          }
+        }
+      ]
+    },
+    "OriginDestinationInformation": [
+      {
+        "RPH": "1",
+        "DepartureDateTime": "2026-06-01T00:00:00",
+        "OriginLocation": {
+          "LocationCode": "LHR"
+        },
+        "DestinationLocation": {
+          "LocationCode": "JFK"
+        }
+      }
+    ],
+    "TravelerInfoSummary": {
+      "AirTravelerAvail": [
+        {
+          "PassengerTypeQuantity": [
+            {
+              "Code": "ADT",
+              "Quantity": 1
+            }
+          ]
+        }
+      ]
+    },
+    "TravelPreferences": {
+      "CabinPref": [
+        {
+          "Cabin": "Y"
+        }
+      ]
+    },
+    "TPA_Extensions": {
+      "IntelliSellTransaction": {
+        "RequestType": {
+          "Name": "50ITINS"
+        }
+      }
+    }
+  }
+}

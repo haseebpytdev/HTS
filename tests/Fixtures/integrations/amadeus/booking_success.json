@@ -1,0 +1,18 @@
+{
+  "data": {
+    "id": "AMA-BKG-001",
+    "pnr": "AM8Z2Q",
+    "status": "confirmed",
+    "createdAt": "2026-06-01T12:20:00Z",
+    "travelers": [
+      { "traveler_type": "adult", "given_name": "Hina", "family_name": "Raza", "nationality": "PK" }
+    ],
+    "total_price": {
+      "currency": "USD",
+      "base_amount": 410.0,
+      "tax_amount": 88.0,
+      "fee_amount": 12.0,
+      "total_amount": 510.0
+    }
+  }
+}

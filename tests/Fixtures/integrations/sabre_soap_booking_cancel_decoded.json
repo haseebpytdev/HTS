@@ -1,0 +1,24 @@
+{
+  "CancelReservationRS": {
+    "status": "CANCELLED",
+    "Locator": "CANCEL01",
+    "TravelItinerary": {
+      "CustomerInfo": {
+        "PersonName": {
+          "PassengerType": "ADT",
+          "GivenName": "Aisha",
+          "Surname": "Noor"
+        }
+      }
+    },
+    "ItineraryPricing": {
+      "Fare": {
+        "currency": "USD",
+        "baseFare": "100.00",
+        "taxes": "20.00",
+        "totalFare": "120.00"
+      }
+    }
+  }
+}
+

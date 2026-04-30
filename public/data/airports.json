@@ -1,0 +1,20 @@
+[
+    {
+        "iata": "LHR",
+        "airport": "Heathrow Airport",
+        "city": "London",
+        "country": "United Kingdom"
+    },
+    {
+        "iata": "IST",
+        "airport": "Istanbul Airport",
+        "city": "Istanbul",
+        "country": "Turkey"
+    },
+    {
+        "iata": "JFK",
+        "airport": "John F. Kennedy International Airport",
+        "city": "New York",
+        "country": "United States"
+    }
+]

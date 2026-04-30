@@ -1,0 +1,10 @@
+{
+  "scenario": "auth_error",
+  "error": {
+    "normalized_code": "supplier_auth_failed",
+    "supplier_code": "TP_AUTH_401",
+    "message": "Travelport token is invalid or expired.",
+    "http_status": 401,
+    "correlation_id": "tp-auth-correlation"
+  }
+}

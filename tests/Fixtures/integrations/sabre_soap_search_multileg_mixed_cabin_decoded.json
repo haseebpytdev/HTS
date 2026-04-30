@@ -1,0 +1,100 @@
+{
+  "OTA_AirLowFareSearchRS": {
+    "PricedItineraries": {
+      "PricedItinerary": [
+        {
+          "SequenceNumber": "11",
+          "pricingToken": "SOAP-TOKEN-MULTI-1",
+          "AirItinerary": {
+            "OriginDestinationOptions": {
+              "OriginDestinationOption": [
+                {
+                  "FlightSegment": {
+                    "@attributes": {
+                      "DepartureDateTime": "2026-10-01T06:00:00",
+                      "ArrivalDateTime": "2026-10-01T09:00:00",
+                      "FlightNumber": "101"
+                    },
+                    "DepartureAirport": {
+                      "@attributes": {
+                        "LocationCode": "KHI"
+                      }
+                    },
+                    "ArrivalAirport": {
+                      "@attributes": {
+                        "LocationCode": "DOH"
+                      }
+                    },
+                    "MarketingAirline": {
+                      "@attributes": {
+                        "Code": "QR"
+                      }
+                    },
+                    "OperatingAirline": {
+                      "@attributes": {
+                        "Code": "QR"
+                      }
+                    },
+                    "cabin": "ECONOMY"
+                  }
+                },
+                {
+                  "FlightSegment": {
+                    "@attributes": {
+                      "DepartureDateTime": "2026-10-01T11:00:00",
+                      "ArrivalDateTime": "2026-10-01T13:00:00",
+                      "FlightNumber": "102"
+                    },
+                    "DepartureAirport": {
+                      "@attributes": {
+                        "LocationCode": "DOH"
+                      }
+                    },
+                    "ArrivalAirport": {
+                      "@attributes": {
+                        "LocationCode": "JED"
+                      }
+                    },
+                    "MarketingAirline": {
+                      "@attributes": {
+                        "Code": "QR"
+                      }
+                    },
+                    "OperatingAirline": {
+                      "@attributes": {
+                        "Code": "QR"
+                      }
+                    },
+                    "cabin": "BUSINESS"
+                  }
+                }
+              ]
+            }
+          },
+          "AirItineraryPricingInfo": {
+            "ItinTotalFare": {
+              "BaseFare": {
+                "@attributes": {
+                  "Amount": "300.00",
+                  "CurrencyCode": "USD"
+                }
+              },
+              "Taxes": {
+                "@attributes": {
+                  "Amount": "70.00"
+                }
+              },
+              "TotalFare": {
+                "@attributes": {
+                  "Amount": "370.00",
+                  "CurrencyCode": "USD"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+

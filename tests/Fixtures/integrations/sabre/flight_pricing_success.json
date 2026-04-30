@@ -1,0 +1,17 @@
+{
+  "priceQuote": {
+    "totals": {
+      "currencyCode": "USD",
+      "base": 390.0,
+      "taxes": 85.0,
+      "fees": 18.0,
+      "grandTotal": 493.0,
+      "status": "available",
+      "lines": [
+        { "label": "Base Fare", "amount": 390.0 },
+        { "label": "Taxes", "amount": 85.0 },
+        { "label": "Fees", "amount": 18.0 }
+      ]
+    }
+  }
+}

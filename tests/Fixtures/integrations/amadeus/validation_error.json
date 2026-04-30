@@ -1,0 +1,10 @@
+{
+  "scenario": "validation_error",
+  "error": {
+    "normalized_code": "supplier_request_invalid",
+    "supplier_code": "AMA_VALIDATION_400",
+    "message": "Amadeus validation error on request fields.",
+    "http_status": 422,
+    "correlation_id": "amadeus-validation-correlation"
+  }
+}

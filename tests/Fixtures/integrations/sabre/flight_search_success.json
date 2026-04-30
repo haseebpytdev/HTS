@@ -1,0 +1,27 @@
+{
+  "groupedItineraryResponse": {
+    "itineraryGroups": [
+      {
+        "itineraries": [
+          {
+            "id": "sabre-offer-1",
+            "pricingToken": "SABRE-REF-001",
+            "legs": [
+              {
+                "segments": [
+                  {
+                    "departure": { "airport": "KHI", "time": "2026-06-01T06:10:00Z" },
+                    "arrival": { "airport": "JED", "time": "2026-06-01T10:15:00Z" },
+                    "marketingCarrier": "SV",
+                    "flightNumber": "701",
+                    "cabin": "ECONOMY"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

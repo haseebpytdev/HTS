@@ -1,0 +1,14 @@
+{
+  "booking": {
+    "status": "not_implemented",
+    "booking_reference": "STUB-REF",
+    "total_price": {
+      "currency": "USD",
+      "base_amount": 0,
+      "tax_amount": 0,
+      "fee_amount": 0,
+      "total_amount": 0
+    },
+    "travelers": []
+  }
+}

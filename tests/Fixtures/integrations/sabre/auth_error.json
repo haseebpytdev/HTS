@@ -1,0 +1,10 @@
+{
+  "scenario": "auth_error",
+  "error": {
+    "normalized_code": "supplier_auth_failed",
+    "supplier_code": "SABRE_AUTH_401",
+    "message": "Sabre access token rejected.",
+    "http_status": 401,
+    "correlation_id": "sabre-auth-correlation"
+  }
+}

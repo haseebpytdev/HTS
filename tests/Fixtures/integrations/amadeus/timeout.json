@@ -1,0 +1,10 @@
+{
+  "scenario": "timeout",
+  "error": {
+    "normalized_code": "supplier_timeout",
+    "supplier_code": "AMA_TIMEOUT",
+    "message": "Amadeus upstream timeout.",
+    "http_status": 504,
+    "correlation_id": "amadeus-timeout"
+  }
+}

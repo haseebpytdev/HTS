@@ -1,0 +1,10 @@
+{
+  "scenario": "timeout",
+  "error": {
+    "normalized_code": "supplier_timeout",
+    "supplier_code": "SABRE_TIMEOUT",
+    "message": "Sabre upstream timeout.",
+    "http_status": 504,
+    "correlation_id": "sabre-timeout"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "GetReservationRS": {
+    "status": "OK",
+    "Reservation": {
+      "BookingDetails": {
+        "BookingReferenceID": "SB-RET-001",
+        "RecordLocator": "RETLOC1"
+      }
+    },
+    "TravelItinerary": {
+      "CustomerInfo": {
+        "PersonName": {
+          "PassengerType": "ADT",
+          "GivenName": "Imran",
+          "Surname": "Ali"
+        }
+      }
+    },
+    "ItineraryPricing": {
+      "Fare": {
+        "currency": "USD",
+        "baseFare": "180.00",
+        "taxes": "45.00",
+        "totalFare": "225.00"
+      }
+    },
+    "Ticketing": {
+      "TicketTimeLimit": "2026-10-20T23:59:00"
+    }
+  }
+}
+

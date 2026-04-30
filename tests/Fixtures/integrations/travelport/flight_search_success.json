@@ -1,0 +1,23 @@
+{
+  "CatalogProductOfferingsResponse": {
+    "Offerings": [
+      {
+        "id": "tp-offer-1",
+        "Identifier": { "value": "TP-REF-001" },
+        "BestCombinablePrice": {
+          "Segments": [
+            {
+              "From": "KHI",
+              "To": "JED",
+              "Departure": "2026-06-01T05:45:00Z",
+              "Arrival": "2026-06-01T09:30:00Z",
+              "Carrier": "PK",
+              "FlightNumber": "731",
+              "Cabin": "ECONOMY"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

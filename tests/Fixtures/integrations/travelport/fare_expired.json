@@ -1,0 +1,10 @@
+{
+  "scenario": "fare_expired",
+  "error": {
+    "normalized_code": "fare_no_longer_available",
+    "supplier_code": "TP_FARE_EXPIRED",
+    "message": "Travelport fare is no longer available.",
+    "http_status": 409,
+    "correlation_id": "tp-fare-expired"
+  }
+}

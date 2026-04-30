@@ -1,0 +1,10 @@
+{
+  "scenario": "rate_limit",
+  "error": {
+    "normalized_code": "supplier_rate_limited",
+    "supplier_code": "TP_RATE_LIMIT_429",
+    "message": "Travelport rate limit reached.",
+    "http_status": 429,
+    "correlation_id": "tp-rate-limit"
+  }
+}

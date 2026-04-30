@@ -1,0 +1,53 @@
+{
+  "CreatePassengerNameRecordRS": {
+    "status": "CONFIRMED",
+    "ItineraryRef": {
+      "@attributes": {
+        "ID": "PNR123"
+      }
+    },
+    "TravelItinerary": {
+      "CustomerInfo": {
+        "PersonName": [
+          {
+            "PassengerType": "ADT",
+            "GivenName": "Ali",
+            "Surname": "Khan"
+          },
+          {
+            "PassengerType": "ADT",
+            "GivenName": "Sara",
+            "Surname": "Khan"
+          }
+        ]
+      }
+    },
+    "AirItineraryPricingInfo": {
+      "ItinTotalFare": {
+        "BaseFare": {
+          "@attributes": {
+            "Amount": "240.00",
+            "CurrencyCode": "USD"
+          }
+        },
+        "Taxes": {
+          "@attributes": {
+            "Amount": "50.00"
+          }
+        },
+        "TotalFare": {
+          "@attributes": {
+            "Amount": "290.00",
+            "CurrencyCode": "USD"
+          }
+        }
+      }
+    },
+    "Ticketing": {
+      "@attributes": {
+        "TicketTimeLimit": "2026-09-15T23:59:00"
+      }
+    }
+  }
+}
+

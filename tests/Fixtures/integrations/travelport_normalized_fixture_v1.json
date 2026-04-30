@@ -1,0 +1,19 @@
+{
+  "_normalized_fixture_v1": true,
+  "offers": [
+    {
+      "id": "tp-fixture-1",
+      "provider_offer_reference": "TP-FIX-REF-1",
+      "segments": [
+        {
+          "departure_airport": "KHI",
+          "arrival_airport": "JED",
+          "departure_at": "2026-06-01T08:00:00Z",
+          "arrival_at": "2026-06-01T12:00:00Z",
+          "marketing_carrier": "PK",
+          "flight_number": "700"
+        }
+      ]
+    }
+  ]
+}

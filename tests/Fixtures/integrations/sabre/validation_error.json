@@ -1,0 +1,10 @@
+{
+  "scenario": "validation_error",
+  "error": {
+    "normalized_code": "supplier_request_invalid",
+    "supplier_code": "SABRE_VALIDATION_400",
+    "message": "Sabre request schema validation failed.",
+    "http_status": 422,
+    "correlation_id": "sabre-validation-correlation"
+  }
+}

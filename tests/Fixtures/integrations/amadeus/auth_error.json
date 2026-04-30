@@ -1,0 +1,10 @@
+{
+  "scenario": "auth_error",
+  "error": {
+    "normalized_code": "supplier_auth_failed",
+    "supplier_code": "AMA_AUTH_401",
+    "message": "Amadeus access token is invalid.",
+    "http_status": 401,
+    "correlation_id": "amadeus-auth-correlation"
+  }
+}

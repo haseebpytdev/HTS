@@ -1,0 +1,10 @@
+{
+  "scenario": "timeout",
+  "error": {
+    "normalized_code": "supplier_timeout",
+    "supplier_code": "TP_TIMEOUT",
+    "message": "Travelport upstream timed out.",
+    "http_status": 504,
+    "correlation_id": "tp-timeout"
+  }
+}

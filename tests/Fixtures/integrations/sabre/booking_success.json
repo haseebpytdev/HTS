@@ -1,0 +1,18 @@
+{
+  "CreatePassengerNameRecordRS": {
+    "id": "SABRE-BKG-001",
+    "recordLocator": "SB3A9P",
+    "status": "confirmed",
+    "createdAt": "2026-06-01T11:00:00Z",
+    "passengers": [
+      { "traveler_type": "adult", "firstName": "Sara", "lastName": "Iqbal", "nationality": "PK" }
+    ],
+    "price": {
+      "currencyCode": "USD",
+      "base": 390.0,
+      "taxes": 85.0,
+      "fees": 18.0,
+      "grandTotal": 493.0
+    }
+  }
+}

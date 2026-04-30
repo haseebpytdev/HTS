@@ -1,0 +1,10 @@
+{
+  "scenario": "fare_expired",
+  "error": {
+    "normalized_code": "fare_no_longer_available",
+    "supplier_code": "SABRE_FARE_EXPIRED",
+    "message": "Sabre fare expired during revalidation.",
+    "http_status": 409,
+    "correlation_id": "sabre-fare-expired"
+  }
+}
